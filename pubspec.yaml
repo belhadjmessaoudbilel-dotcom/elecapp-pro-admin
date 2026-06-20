@@ -1,0 +1,50 @@
+name: elecapp_admin
+description: "Elecapp Pro — Admin"
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # Navigation
+  go_router: ^14.6.3
+
+  # State management
+  provider: ^6.1.2
+
+  # Backend Supabase
+  # Épinglé < 2.15.0 : voir packages/elecapp_core/pubspec.yaml (passkeys_web casse le boot web)
+  supabase_flutter: ">=2.5.0 <2.15.0"
+  flutter_dotenv: ^5.1.0
+
+  # Sécurité / validation
+  email_validator: ^2.1.17
+
+  # Shared core package
+  elecapp_core:
+    path: packages/elecapp_core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_native_splash: ^2.4.3
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  color_dark: "#FFFFFF"
+  image: assets/images/logo1.png
+  android: true
+  ios: true
+  web: false
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
+    - assets/images/

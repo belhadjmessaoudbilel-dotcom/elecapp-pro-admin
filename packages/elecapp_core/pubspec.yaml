@@ -1,0 +1,28 @@
+name: elecapp_core
+description: "Code partagé Elecapp Pro — config Supabase, thème, sécurité/validation"
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Épinglé < 2.15.0 : à partir de 2.15.0, supabase_flutter dépend de
+  # `passkeys`, dont l'implémentation web (passkeys_web) plante au boot
+  # (TypeError sur `init`). On n'utilise pas les passkeys.
+  supabase_flutter: ">=2.5.0 <2.15.0"
+  flutter_dotenv: ^5.1.0
+  flutter_secure_storage: ^9.2.2
+  crypto: ^3.0.6
+  email_validator: ^2.1.17
+  logger: ^2.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
